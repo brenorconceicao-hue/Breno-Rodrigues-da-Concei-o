@@ -41,5 +41,5 @@ if qtd_total > 0:
     print(f"Média geral dos números lidos: {media_geral:.2f}")
 else:
     print("Média geral: Nenhum número foi inserido.")
-    time.sleep(2)
     os.system('cls')
+    time.sleep(2)
