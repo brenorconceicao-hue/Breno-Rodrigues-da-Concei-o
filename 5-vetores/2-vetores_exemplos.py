@@ -1,9 +1,9 @@
-import os 
+import os
 os.system('cls')
 
 print('= Variaveis =')
-variavel = 10 
-variavel = 20 
+variavel = 10
+variavel = 20
 print(f'valor da variavel: {variavel}')
 
 print('\n= vetores =')
