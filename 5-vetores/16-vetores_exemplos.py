@@ -10,7 +10,7 @@ while True:
     print("1 - Cadastrar série")
     print("2 - Listar séries")
     print("0 - Sair")
-    opcao = int(input("Escolha uma opção: "))  
+    opcao = int(input("Escolha uma opção: "))
 
     match opcao:
         case 1:
@@ -33,8 +33,9 @@ while True:
                     print(f"{i + 1} {serie}")
             input("\nPressione Enter para continuar...")
         case 0:
-            print("Saindo do programa...")  
+            print("Saindo do programa...")
             break
         case _:
             print("Opção inválida. Tente novamente.")
             input("\nPressione Enter para continuar...")
+            
