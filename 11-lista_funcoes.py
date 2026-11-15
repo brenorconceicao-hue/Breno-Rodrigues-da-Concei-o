@@ -1,11 +1,14 @@
-import os 
+import os
+
 os.system('cls')
 
-def metros_e_cm():
-    return metros*100
-metros= float(input("digite quantos metros pra converter: "))
 
+def metros_e_cm(metros):
+  return metros * 100
+
+
+metros = float(input("Digite quantos metros para converter: "))
 converter = metros_e_cm(metros)
 
-print("\n exibir dados ")
-print(f'{metros} em centimetros {converter}')
+print("\nExibir dados:")
+print(f"{metros} m em centímetros são {converter} cm")
