@@ -2,8 +2,8 @@ import os
 
 os.system('cls')
 
-usuario_correto = "senai"
-senha_correta = "1234"
+usuario_correto = ...
+senha_correta = ...
 
 while True:
     usuario = input("Digite o seu login: ")
