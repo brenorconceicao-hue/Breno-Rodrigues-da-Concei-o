@@ -1,31 +1,26 @@
-
 import os
-os.system('cls')
 
+os.system('cls')
 lista_nome = []
 lista_sobrenome = []
 
 while True:
     os.system('cls')
-
     print('''==== HOSPITAL DENDEZEIROS ====
-            1- Cadastrar paciente
-            2- Listar paciente
-            3- Atualizar paciente
-            4- Remover paciente
-            0- Sair
-            ''')
-
+1- Cadastrar paciente
+2- Listar paciente
+3- Atualizar paciente
+4- Remover paciente
+0- Sair
+''')
     opcao = input('Escolha uma opção: ')
 
     match opcao:
-
         case '1':
             os.system('cls')
             print('==== CADASTRAR PACIENTE ====')
-
-            nome = input('Digite o nome do paciente: ').upper()
-            sobrenome = input('Digite o sobrenome do paciente: ').upper()
+            nome = input('Digite o nome do paciente: ').strip().upper()
+            sobrenome = input('Digite o sobrenome do paciente: ').strip().upper()
 
             if nome == '' or sobrenome == '':
                 print('O nome e o sobrenome devem ser inseridos!')
@@ -33,25 +28,21 @@ while True:
                 lista_nome.append(nome)
                 lista_sobrenome.append(sobrenome)
                 print('Paciente cadastrado!')
-
             input('Pressione ENTER para continuar...')
 
         case '2':
             os.system('cls')
             print('==== LISTA DE PACIENTES ====')
-
             if len(lista_nome) == 0:
                 print('Não existem pacientes cadastrados!')
             else:
                 for posicao, nome in enumerate(lista_nome):
                     print(f'{posicao + 1} - {nome} {lista_sobrenome[posicao]}')
-
             input('Pressione ENTER para continuar...')
 
         case '3':
             os.system('cls')
             print('==== ATUALIZAR PACIENTE ====')
-
             if len(lista_nome) == 0:
                 print('Não existem pacientes cadastrados!')
             else:
@@ -59,13 +50,11 @@ while True:
                     print(f'{posicao + 1} - {nome} {lista_sobrenome[posicao]}')
 
                 numero = input('Digite o número do paciente: ')
-
                 if numero.isdigit():
                     numero = int(numero)
-
-                    if numero >= 1 and numero <= len(lista_nome):
-                        nome = input('Digite o novo nome: ').upper()
-                        sobrenome = input('Digite o novo sobrenome: ').upper()
+                    if 1 <= numero <= len(lista_nome):
+                        nome = input('Digite o novo nome: ').strip().upper()
+                        sobrenome = input('Digite o novo sobrenome: ').strip().upper()
 
                         if nome == '' or sobrenome == '':
                             print('O nome e o sobrenome devem ser inseridos!')
@@ -77,13 +66,11 @@ while True:
                         print('Paciente não encontrado!')
                 else:
                     print('Digite um número válido!')
-
             input('Pressione ENTER para continuar...')
 
         case '4':
             os.system('cls')
             print('==== REMOVER PACIENTE ====')
-
             if len(lista_nome) == 0:
                 print('Não existem pacientes cadastrados!')
             else:
@@ -91,15 +78,9 @@ while True:
                     print(f'{posicao + 1} - {nome} {lista_sobrenome[posicao]}')
 
                 numero = input('Digite o número do paciente: ')
-
-            if numero == '1' or numero == '2' or numero == '3':
-             numero = int(numero)
-else:
-    print('Digite um número válido!')():
-    numero = int(numero)
-
-    if numero >= 1 and numero <= len(lista_nome):
-
+                if numero.isdigit():
+                    numero = int(numero)
+                    if 1 <= numero <= len(lista_nome):
                         nova_lista_nome = []
                         nova_lista_sobrenome = []
 
@@ -110,14 +91,11 @@ else:
 
                         lista_nome = nova_lista_nome
                         lista_sobrenome = nova_lista_sobrenome
-
                         print('Paciente removido com sucesso!')
-
-    else:
+                    else:
                         print('Paciente não encontrado!')
-            else:
+                else:
                     print('Digite um número válido!')
-
             input('Pressione ENTER para continuar...')
 
         case '0':
